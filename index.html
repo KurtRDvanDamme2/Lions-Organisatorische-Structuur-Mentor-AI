@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Favicon Link -->
+        <!-- Favicon Link -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script>
         tailwind.config = {
@@ -95,6 +95,17 @@
         .chat-message-content p { margin-bottom: 0.5rem; }
         .chat-message-content strong { color: #F2A900; font-weight: 600; }
         .chat-message-content ul { list-style-type: disc; margin-left: 1rem; margin-bottom: 0.5rem; }
+        
+        /* Flip Card Styling */
+        .flip-card { perspective: 1000px; }
+        .flip-card-inner { transform-style: preserve-3d; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        .flip-card:hover .flip-card-inner { transform: rotateY(180deg); }
+        .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+        .rotate-y-180 { transform: rotateY(180deg); }
+        
+        /* Scrollbar voor achterkant kaartjes */
+        .flip-card-back::-webkit-scrollbar { width: 4px; }
+        .flip-card-back::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
     </style>
 </head>
 <body class="antialiased min-h-screen py-12 px-4 sm:px-6 lg:px-8 relative">
@@ -218,6 +229,262 @@
                     <h3 class="text-3xl font-bold text-white mb-3">De Lions Club (De Basis)</h3>
                     <p class="text-blue-100 text-base md:text-lg mb-4">De absolute fundering van de organisatie. Elke club is zelfstandig en wordt gedragen door zijn leden. Hier gebeurt het échte 'We Serve' werk.</p>
                 </div>
+            </div>
+        </div>
+
+        <!-- NEW SECTION: Binnenkant van de Club (GAT & Werking) -->
+        <div class="relative w-full mt-8 mb-16 px-4 md:px-0">
+            <!-- Connector line from Level 1 -->
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-lions-gold to-transparent transform -translate-x-1/2 opacity-30 z-0"></div>
+            
+            <div class="max-w-4xl mx-auto bg-lions-card border-2 border-slate-700 rounded-2xl p-6 md:p-10 relative z-10 shadow-2xl">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 text-center">De Interne Keuken: Structuur & Werking</h3>
+                <p class="text-slate-400 text-center mb-8 max-w-2xl mx-auto">Om onze 'We Serve' doelen te bereiken, steunt elke club op een kernbestuur en het <strong>GAT (Global Action Team)</strong>. Dit team is de hefboom voor de service naar binnen (leden) en buiten (doelgroepen).</p>
+
+                <!-- VISUAL ORG CHART (Ref: Page 28 of brochure) -->
+                <div class="mb-12 relative bg-slate-900/50 p-6 rounded-2xl border border-slate-700 overflow-hidden">
+                    <h4 class="text-xl font-semibold text-lions-gold mb-8 text-center"><i class="fas fa-sitemap mr-2"></i>Organigram van de Club</h4>
+                    
+                    <!-- Vertical connecting line from Voorzitter -->
+                    <div class="hidden md:block absolute left-1/2 top-[100px] bottom-10 w-0.5 bg-slate-600 transform -translate-x-1/2 z-0"></div>
+
+                    <!-- Voorzitter (Top) -->
+                    <div class="flex justify-center mb-8 relative z-10">
+                        <div class="bg-lions-blue border-2 border-lions-gold p-4 rounded-xl text-center shadow-[0_0_15px_rgba(242,169,0,0.4)] w-56">
+                            <h5 class="font-bold text-white text-lg">Voorzitter</h5>
+                            <p class="text-xs text-blue-200">Lions Club</p>
+                        </div>
+                    </div>
+
+                    <!-- Horizontal connecting line for GAT -->
+                    <div class="hidden md:block absolute left-[15%] right-[15%] top-[190px] h-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute left-[15%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute left-[38%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute right-[38%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute right-[15%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
+
+                    <!-- GAT Box (The Red Box from the brochure) -->
+                    <div class="relative border-2 border-red-500/80 bg-red-900/10 rounded-2xl p-6 mb-12 mt-6 pt-10 shadow-lg group">
+                        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-md tracking-wider border border-red-400 flex items-center gap-2 group-hover:scale-105 transition-transform">
+                            <i class="fas fa-users-cog"></i> GAT - GLOBAL ACTION TEAM
+                        </div>
+                        
+                        <!-- GAT Members -->
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
+                            
+                            <!-- Past-Voorzitter Flip Card -->
+                            <div class="flip-card h-64 cursor-pointer group">
+                                <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                                    <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border border-slate-500 text-center flex flex-col justify-center">
+                                        <h6 class="font-bold text-white text-lg">Past-Voorzitter</h6>
+                                        <p class="text-xs text-slate-400 mt-1">LCIF</p>
+                                        <div class="mt-auto pt-3 text-slate-500">
+                                            <i class="fas fa-undo text-2xl opacity-50 mb-1"></i>
+                                            <p class="text-[10px] uppercase tracking-wide">Hover voor taken</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-slate-500 p-4 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                        <h6 class="font-bold text-white text-sm border-b border-slate-700 pb-1 mb-2">Taakverdeling</h6>
+                                        <ul class="text-[11px] text-slate-300 text-left list-disc pl-3 space-y-1.5">
+                                            <li>Mentor van het nieuwe bestuur.</li>
+                                            <li>Denkt mee op basis van ervaring vorig jaar.</li>
+                                            <li>Brengt het LCIF op een gepaste wijze onder de aandacht.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GMT Flip Card -->
+                            <div class="flip-card h-64 cursor-pointer group">
+                                <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                                    <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-lions-gold text-center flex flex-col justify-center">
+                                        <h6 class="font-bold text-white text-xl">GMT</h6>
+                                        <p class="text-xs text-slate-400 mt-1">Global Membership</p>
+                                        <div class="mt-auto pt-3 border-t border-slate-600 w-full">
+                                            <p class="text-[10px] text-slate-400 uppercase tracking-wide">Onderliggend:</p>
+                                            <p class="text-xs text-lions-gold font-medium leading-snug mt-1">Admissie-<br>commissie</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-lions-gold p-4 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                        <h6 class="font-bold text-lions-gold text-sm border-b border-slate-700 pb-1 mb-2">Taken GMT</h6>
+                                        <ul class="text-[11px] text-slate-300 text-left list-disc pl-3 space-y-1.5">
+                                            <li>Monitoren ledentevredenheid & retentiebeleid.</li>
+                                            <li>Actieplan maken voor aangroei ledenbestand.</li>
+                                            <li>Onthaal nieuwe leden & peterschap.</li>
+                                            <li>Waken over aantrekkelijkheid club voor jongere leden.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GLT Flip Card -->
+                            <div class="flip-card h-64 cursor-pointer group">
+                                <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                                    <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-purple-500 text-center flex flex-col justify-center">
+                                        <h6 class="font-bold text-white text-xl">GLT</h6>
+                                        <p class="text-xs text-slate-400 mt-1">Global Leadership</p>
+                                        <div class="mt-auto pt-3 border-t border-slate-600 w-full">
+                                            <p class="text-[10px] text-slate-400 uppercase tracking-wide">Onderliggend:</p>
+                                            <p class="text-xs text-purple-400 font-medium leading-snug mt-1">Commissie<br>Effectieven</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-purple-500 p-4 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                        <h6 class="font-bold text-purple-400 text-sm border-b border-slate-700 pb-1 mb-2">Taken GLT</h6>
+                                        <ul class="text-[11px] text-slate-300 text-left list-disc pl-3 space-y-1.5">
+                                            <li>Als 1e vice een werkingsplan opmaken voor volgend jaar.</li>
+                                            <li>Evaluatie clubwerking & betrokkenheid leden.</li>
+                                            <li>Leden aanmoedigen voor opleidingen.</li>
+                                            <li>Leden stimuleren voor leidinggevende rollen.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GST Flip Card -->
+                            <div class="flip-card h-64 cursor-pointer group">
+                                <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                                    <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-blue-500 text-center flex flex-col justify-center">
+                                        <h6 class="font-bold text-white text-xl">GST</h6>
+                                        <p class="text-xs text-slate-400 mt-1">Global Service</p>
+                                        <div class="mt-auto pt-3 border-t border-slate-600 w-full">
+                                            <p class="text-[10px] text-slate-400 uppercase tracking-wide">Onderliggend:</p>
+                                            <p class="text-xs text-blue-400 font-medium leading-snug mt-1">Sociale<br>Commissie</p>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-blue-500 p-4 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                        <h6 class="font-bold text-blue-400 text-sm border-b border-slate-700 pb-1 mb-2">Taken GST</h6>
+                                        <ul class="text-[11px] text-slate-300 text-left list-disc pl-3 space-y-1.5">
+                                            <li>Sociale voetafdruk in gemeenschap vergroten.</li>
+                                            <li>Sociale initiatieven en fundraising op elkaar afstemmen.</li>
+                                            <li>Betrokkenheid van clubleden bij 'We Serve' monitoren.</li>
+                                            <li>Kennen van sociale noden in de lokale gemeenschap.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Horizontal connecting line for Other Functions -->
+                    <div class="hidden md:block absolute left-[15%] right-[15%] bottom-[105px] h-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute left-[15%] bottom-[81px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute left-[38%] bottom-[81px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute right-[38%] bottom-[81px] h-6 w-0.5 bg-slate-600 z-0"></div>
+                    <div class="hidden md:block absolute right-[15%] bottom-[81px] h-6 w-0.5 bg-slate-600 z-0"></div>
+
+                    <!-- Other Board Members (Niet-GAT) -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10 mt-8">
+                         <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-pen-nib text-slate-400"></i>
+                            <h6 class="font-bold text-slate-200 text-sm">Secretaris</h6>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-coins text-slate-400"></i>
+                            <h6 class="font-bold text-slate-200 text-sm">Penningmeester</h6>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-handshake text-slate-400"></i>
+                            <h6 class="font-bold text-slate-200 text-sm">Protocol</h6>
+                        </div>
+                        <div class="bg-slate-800 p-3 rounded-xl border border-slate-700 text-center flex items-center justify-center gap-2">
+                            <i class="fas fa-laptop text-slate-400"></i>
+                            <h6 class="font-bold text-slate-200 text-sm">ICT / Comm.</h6>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GAT Details Section met Wiel -->
+                <div class="mb-10">
+                    <h4 class="text-xl font-semibold text-lions-gold mb-8 border-b border-slate-700 pb-2 text-center md:text-left"><i class="fas fa-sync-alt mr-2"></i>Wat doet dit GAT precies? (De Cyclus)</h4>
+                    
+                    <div class="flex flex-col lg:flex-row items-center gap-10">
+                        
+                        <!-- GRAFISCH WIEL (CSS Donut Chart) -->
+                        <div class="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0 mx-auto">
+                            <!-- Roterende stippellijn op achtergrond om cyclus te benadrukken -->
+                            <div class="absolute inset-0 rounded-full border-4 border-slate-600 animate-[spin_20s_linear_infinite] pointer-events-none border-dashed opacity-50 scale-105"></div>
+                            
+                            <div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-1.5 p-1.5 relative z-10">
+                                <!-- 1. Sociaal (Top Left) -->
+                                <div class="bg-gradient-to-br from-lions-gold to-yellow-600 rounded-tl-full flex items-center justify-center p-4 text-lions-blue text-center shadow-lg hover:scale-105 hover:z-20 transition-transform cursor-pointer group origin-bottom-right">
+                                    <div class="transform -translate-x-1 -translate-y-1">
+                                        <span class="block text-xl md:text-2xl font-black mb-0.5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">1</span>
+                                        <span class="font-bold text-xs md:text-sm leading-tight uppercase tracking-wide">Sociaal<br>(GST)</span>
+                                    </div>
+                                </div>
+                                <!-- 2. Imago (Top Right) -->
+                                <div class="bg-gradient-to-bl from-blue-400 to-blue-600 rounded-tr-full flex items-center justify-center p-4 text-white text-center shadow-lg hover:scale-105 hover:z-20 transition-transform cursor-pointer group origin-bottom-left">
+                                    <div class="transform translate-x-1 -translate-y-1">
+                                        <span class="block text-xl md:text-2xl font-black mb-0.5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">2</span>
+                                        <span class="font-bold text-xs md:text-sm leading-tight uppercase tracking-wide">Imago<br>(PR)</span>
+                                    </div>
+                                </div>
+                                <!-- 4. Leden (Bottom Left) -->
+                                <div class="bg-gradient-to-tr from-purple-500 to-purple-700 rounded-bl-full flex items-center justify-center p-4 text-white text-center shadow-lg hover:scale-105 hover:z-20 transition-transform cursor-pointer group origin-top-right">
+                                    <div class="transform -translate-x-1 translate-y-1">
+                                        <span class="font-bold text-xs md:text-sm leading-tight uppercase tracking-wide">Leden<br>(GMT)</span>
+                                        <span class="block text-xl md:text-2xl font-black mt-0.5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">4</span>
+                                    </div>
+                                </div>
+                                <!-- 3. Organisatie (Bottom Right) -->
+                                <div class="bg-gradient-to-tl from-lions-blue to-blue-900 rounded-br-full flex items-center justify-center p-4 text-white text-center shadow-lg hover:scale-105 hover:z-20 transition-transform cursor-pointer group origin-top-left">
+                                    <div class="transform translate-x-1 translate-y-1">
+                                        <span class="font-bold text-xs md:text-sm leading-tight uppercase tracking-wide">Org.<br>(GLT)</span>
+                                        <span class="block text-xl md:text-2xl font-black mt-0.5 opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all">3</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Donut Hole (Middenstuk) -->
+                            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 bg-lions-card rounded-full border-4 border-slate-700 flex flex-col items-center justify-center shadow-2xl z-20">
+                                <i class="fas fa-sync-alt text-lions-gold text-2xl mb-1 animate-[spin_6s_linear_infinite]"></i>
+                                <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest text-center leading-tight">De GAT<br>Cyclus</span>
+                            </div>
+                        </div>
+
+                        <!-- UITLEG BLOKKEN -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 flex-1">
+                            <!-- Punt 1 -->
+                            <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-lions-gold transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-lions-gold text-lions-blue flex items-center justify-center font-bold flex-shrink-0 shadow-lg">1</div>
+                                <div>
+                                    <h6 class="font-bold text-lions-gold text-lg">Sociaal (GST)</h6>
+                                    <p class="text-sm text-slate-400 mt-1">Met acties de sociale voetafdruk in de gemeenschap vergroten. Verschillende initiatieven en commissies aansturen met een globale visie.</p>
+                                </div>
+                            </div>
+
+                            <!-- Punt 2 -->
+                            <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-400 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-blue-500 text-white flex items-center justify-center font-bold flex-shrink-0 shadow-lg">2</div>
+                                <div>
+                                    <h6 class="font-bold text-blue-400 text-lg">Imago (PR & Projecten)</h6>
+                                    <p class="text-sm text-slate-400 mt-1">Visibiliteit vergroten maakt fundraising veel makkelijker en trekt bovendien spontaan nieuwe, gemotiveerde leden aan.</p>
+                                </div>
+                            </div>
+
+                            <!-- Punt 3 -->
+                            <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-blue-600 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-lions-blue text-white flex items-center justify-center font-bold flex-shrink-0 shadow-lg">3</div>
+                                <div>
+                                    <h6 class="font-bold text-blue-500 text-lg">Organisatie (GLT)</h6>
+                                    <p class="text-sm text-slate-400 mt-1">Een stevig onderbouwde organisatie vormt een sterke kapstok voor projecten. Vlotte interne communicatie verhoogt de betrokkenheid.</p>
+                                </div>
+                            </div>
+
+                            <!-- Punt 4 -->
+                            <div class="flex items-start gap-4 p-4 bg-slate-800/50 rounded-lg border border-slate-700 hover:border-purple-400 transition-colors">
+                                <div class="w-8 h-8 rounded-full bg-purple-500 text-white flex items-center justify-center font-bold flex-shrink-0 shadow-lg">4</div>
+                                <div>
+                                    <h6 class="font-bold text-purple-400 text-lg">Ledentevredenheid (GMT)</h6>
+                                    <p class="text-sm text-slate-400 mt-1">Leden komen graag naar een aangename club met goede projecten (retentie). Doelgericht werven verbetert de interne dynamiek.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
