@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-        <!-- Favicon Link -->
+            <!-- Favicon Link -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script>
         tailwind.config = {
@@ -26,6 +26,8 @@
                     },
                     animation: {
                         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'spin-slow': 'spin 20s linear infinite',
+                        'spin-medium': 'spin 6s linear infinite'
                     }
                 }
             }
@@ -232,7 +234,7 @@
             </div>
         </div>
 
-        <!-- NEW SECTION: Binnenkant van de Club (GAT & Werking) -->
+        <!-- Binnenkant van de Club (GAT & Werking) -->
         <div class="relative w-full mt-8 mb-16 px-4 md:px-0">
             <!-- Connector line from Level 1 -->
             <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-lions-gold to-transparent transform -translate-x-1/2 opacity-30 z-0"></div>
@@ -241,7 +243,7 @@
                 <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 text-center">De Interne Keuken: Structuur & Werking</h3>
                 <p class="text-slate-400 text-center mb-8 max-w-2xl mx-auto">Om onze 'We Serve' doelen te bereiken, steunt elke club op een kernbestuur en het <strong>GAT (Global Action Team)</strong>. Dit team is de hefboom voor de service naar binnen (leden) en buiten (doelgroepen).</p>
 
-                <!-- VISUAL ORG CHART (Ref: Page 28 of brochure) -->
+                <!-- VISUAL ORG CHART -->
                 <div class="mb-12 relative bg-slate-900/50 p-6 rounded-2xl border border-slate-700 overflow-hidden">
                     <h4 class="text-xl font-semibold text-lions-gold mb-8 text-center"><i class="fas fa-sitemap mr-2"></i>Organigram van de Club</h4>
                     
@@ -263,13 +265,13 @@
                     <div class="hidden md:block absolute right-[38%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
                     <div class="hidden md:block absolute right-[15%] top-[190px] h-6 w-0.5 bg-slate-600 z-0"></div>
 
-                    <!-- GAT Box (The Red Box from the brochure) -->
+                    <!-- GAT Box (The Red Box) -->
                     <div class="relative border-2 border-red-500/80 bg-red-900/10 rounded-2xl p-6 mb-12 mt-6 pt-10 shadow-lg group">
                         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-red-600 to-red-500 text-white px-6 py-1.5 rounded-full text-sm font-bold shadow-md tracking-wider border border-red-400 flex items-center gap-2 group-hover:scale-105 transition-transform">
                             <i class="fas fa-users-cog"></i> GAT - GLOBAL ACTION TEAM
                         </div>
                         
-                        <!-- GAT Members -->
+                        <!-- GAT Members Flip Cards -->
                         <div class="grid grid-cols-1 md:grid-cols-4 gap-4 relative z-10">
                             
                             <!-- Past-Voorzitter Flip Card -->
@@ -302,7 +304,7 @@
                                         <p class="text-xs text-slate-400 mt-1">Global Membership</p>
                                         <div class="mt-auto pt-3 border-t border-slate-600 w-full">
                                             <p class="text-[10px] text-slate-400 uppercase tracking-wide">Onderliggend:</p>
-                                            <p class="text-xs text-lions-gold font-medium leading-snug mt-1">Admissie-<br>commissie</p>
+                                            <p class="text-xs text-lions-gold font-medium leading-snug mt-1">Admissie<br>commissie</p>
                                         </div>
                                     </div>
                                     <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-lions-gold p-4 rounded-xl flex flex-col justify-start overflow-y-auto">
@@ -402,8 +404,8 @@
                         
                         <!-- GRAFISCH WIEL (CSS Donut Chart) -->
                         <div class="relative w-64 h-64 md:w-80 md:h-80 flex-shrink-0 mx-auto">
-                            <!-- Roterende stippellijn op achtergrond om cyclus te benadrukken -->
-                            <div class="absolute inset-0 rounded-full border-4 border-slate-600 animate-[spin_20s_linear_infinite] pointer-events-none border-dashed opacity-50 scale-105"></div>
+                            <!-- Roterende stippellijn op achtergrond -->
+                            <div class="absolute inset-0 rounded-full border-4 border-slate-600 animate-spin-slow pointer-events-none border-dashed opacity-50 scale-105"></div>
                             
                             <div class="grid grid-cols-2 grid-rows-2 w-full h-full gap-1.5 p-1.5 relative z-10">
                                 <!-- 1. Sociaal (Top Left) -->
@@ -436,9 +438,9 @@
                                 </div>
                             </div>
                             
-                            <!-- Donut Hole (Middenstuk) -->
+                            <!-- Donut Hole -->
                             <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 md:w-28 md:h-28 bg-lions-card rounded-full border-4 border-slate-700 flex flex-col items-center justify-center shadow-2xl z-20">
-                                <i class="fas fa-sync-alt text-lions-gold text-2xl mb-1 animate-[spin_6s_linear_infinite]"></i>
+                                <i class="fas fa-sync-alt text-lions-gold text-2xl mb-1 animate-spin-medium"></i>
                                 <span class="text-[10px] font-bold text-slate-300 uppercase tracking-widest text-center leading-tight">De GAT<br>Cyclus</span>
                             </div>
                         </div>
@@ -487,177 +489,332 @@
 
             </div>
         </div>
-    </div>
+
+        <!-- NEW SECTION: Soorten Leden -->
+        <div class="relative w-full mt-8 mb-16 px-4 md:px-0">
+            <!-- Connector line -->
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-slate-700 to-transparent transform -translate-x-1/2 opacity-30 z-0"></div>
+            
+            <div class="max-w-5xl mx-auto bg-lions-card border-2 border-slate-700 rounded-2xl p-6 md:p-10 relative z-10 shadow-2xl">
+                <h3 class="text-2xl md:text-3xl font-bold text-white mb-2 text-center">De 7 Soorten Lidmaatschap</h3>
+                <p class="text-slate-400 text-center mb-10 max-w-2xl mx-auto">Niet elk lid heeft exact dezelfde rechten en plichten. Lions Clubs International (LCI) kent 7 verschillende statuten. Zweef over een kaart om de specifieke regels voor dat type lid te bekijken.</p>
+
+                <!-- Grid voor de 7 lidmaatschappen -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 relative z-10">
+                    
+                    <!-- 1. Actief Lid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-emerald-500 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-3xl mb-4 border border-emerald-500/50">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl">Actief Lid</h6>
+                                <p class="text-xs text-slate-400 mt-1">Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-emerald-500 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-emerald-400 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-emerald-500 w-4"></i>Heeft stemrecht.</li>
+                                    <li><i class="fas fa-check text-emerald-500 w-4"></i>Is verkiesbaar voor bestuursfuncties.</li>
+                                    <li><i class="fas fa-calendar-check text-emerald-500 w-4"></i>Aanwezigheidsplicht (vergaderingen & acties).</li>
+                                    <li><i class="fas fa-coins text-emerald-500 w-4"></i>Betaalt alle lidgelden (Club, Zone, D, MD, LCI).</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Verwijderd Lid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-orange-500 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-orange-500/20 text-orange-400 flex items-center justify-center text-3xl mb-4 border border-orange-500/50">
+                                    <i class="fas fa-user-clock"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl">Verwijderd Lid</h6>
+                                <p class="text-xs text-slate-400 mt-1">Member at Large</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-orange-500 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-orange-400 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <p class="text-[10px] text-slate-400 mb-2 italic">Tijdelijk statuut (max 2x 6mnd) wegens vb. werk of gezondheid.</p>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-orange-500 w-4"></i>Stemrecht enkel op clubniveau.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Niet verkiesbaar, geen functies.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen plicht tot clubvergaderingen.</li>
+                                    <li><i class="fas fa-coins text-orange-500 w-4"></i>Betaalt wél alle lidgelden.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Erelid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-lions-gold text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-lions-gold/20 text-lions-gold flex items-center justify-center text-3xl mb-4 border border-lions-gold/50">
+                                    <i class="fas fa-award"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl">Erelid</h6>
+                                <p class="text-xs text-slate-400 mt-1">Honorary Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-lions-gold p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-lions-gold text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen stemrecht.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Niet verkiesbaar, geen bestuursfuncties.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen plichten of aanwezigheidsplicht.</li>
+                                    <li><i class="fas fa-gift text-lions-gold w-4"></i>Lidgelden worden betaald door de club.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Geprivilegieerd Lid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-purple-500 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-purple-500/20 text-purple-400 flex items-center justify-center text-3xl mb-4 border border-purple-500/50">
+                                    <i class="fas fa-user-shield"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl leading-tight">Geprivilegieerd<br>Lid</h6>
+                                <p class="text-xs text-slate-400 mt-2">Privileged Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-purple-500 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-purple-400 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <p class="text-[10px] text-slate-400 mb-2 italic">Min. 15 jaar lid, maar kan wegens ziekte/leeftijd niet meer voluit meedoen.</p>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-purple-500 w-4"></i>Heeft stemrecht.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Niet verkiesbaar voor bestuursfuncties.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen plicht tot clubvergaderingen.</li>
+                                    <li><i class="fas fa-coins text-purple-500 w-4"></i>Betaalt wél alle lidgelden.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Lid voor het Leven -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-blue-500 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-3xl mb-4 border border-blue-500/50">
+                                    <i class="fas fa-infinity"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl leading-tight">Lid voor<br>het Leven</h6>
+                                <p class="text-xs text-slate-400 mt-2">Life Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-blue-500 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-blue-400 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <p class="text-[10px] text-slate-400 mb-2 italic">Min. 20 jaar lid. Aangevraagd bij Oak Brook met 1-malige som.</p>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-blue-500 w-4"></i>Volle rechten indien hij/zij actief meedoet.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen plicht tot clubvergaderingen.</li>
+                                    <li><i class="fas fa-coins text-blue-500 w-4"></i>Vrijgesteld int. lidgeld. Betaalt wél D, MD, Club.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Geassocieerd Lid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-teal-500 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-teal-500/20 text-teal-400 flex items-center justify-center text-3xl mb-4 border border-teal-500/50">
+                                    <i class="fas fa-user-tag"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl leading-tight">Geassocieerd<br>Lid</h6>
+                                <p class="text-xs text-slate-400 mt-2">Associated Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-teal-500 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-teal-400 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <p class="text-[10px] text-slate-400 mb-2 italic">Lid van andere club, maar woont/werkt in deze regio.</p>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-teal-500 w-4"></i>Stemrecht over clubzaken in BEIDE clubs.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Niet verkiesbaar in beide clubs.</li>
+                                    <li><i class="fas fa-info-circle text-teal-500 w-4"></i>Lidgeld & aanwezigheid bij Basisclub.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Geaffilieerd Lid -->
+                    <div class="flip-card h-72 cursor-pointer group">
+                        <div class="flip-card-inner relative w-full h-full shadow-lg rounded-xl">
+                            <div class="flip-card-front absolute inset-0 backface-hidden bg-slate-800 p-4 rounded-xl border-b-4 border-b-slate-400 text-center flex flex-col justify-center items-center">
+                                <div class="w-16 h-16 rounded-full bg-slate-500/20 text-slate-300 flex items-center justify-center text-3xl mb-4 border border-slate-500/50">
+                                    <i class="fas fa-user-plus"></i>
+                                </div>
+                                <h6 class="font-bold text-white text-xl leading-tight">Geaffilieerd<br>Lid</h6>
+                                <p class="text-xs text-slate-400 mt-2">Affiliated Member</p>
+                            </div>
+                            <div class="flip-card-back absolute inset-0 backface-hidden rotate-y-180 bg-slate-900 border-2 border-slate-400 p-5 rounded-xl flex flex-col justify-start overflow-y-auto">
+                                <h6 class="font-bold text-slate-300 text-sm border-b border-slate-700 pb-2 mb-3">Rechten & Plichten</h6>
+                                <p class="text-[10px] text-slate-400 mb-2 italic">Een persoon die de club genegen is en lokaal is aangenomen.</p>
+                                <ul class="text-[12px] text-slate-300 text-left space-y-2">
+                                    <li><i class="fas fa-check text-slate-400 w-4"></i>Heeft lokaal stemrecht (clubzaken).</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Niet verkiesbaar voor bestuursfuncties.</li>
+                                    <li><i class="fas fa-times text-red-500 w-4"></i>Geen plicht tot clubvergaderingen.</li>
+                                    <li><i class="fas fa-coins text-slate-400 w-4"></i>Betaalt alle lidgelden.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- End Main Container -->
 
     <!-- AI Mentor Chatbot UI -->
-    
-    <!-- Floating Action Button -->
-    <button id="chatToggleBtn" onclick="toggleChat()" class="fixed bottom-6 right-6 bg-lions-gold text-lions-blue p-4 rounded-full shadow-2xl hover:bg-yellow-400 hover:scale-110 transition-all z-50 group flex items-center justify-center border-2 border-white">
-        <i class="fas fa-comment-dots text-2xl"></i>
-        <span class="absolute right-16 bg-lions-card text-white text-sm px-3 py-1 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap border border-slate-600 shadow-lg">Vraag het de Mentor AI!</span>
-    </button>
-
-    <!-- Chat Window -->
-    <div id="chatWindow" class="fixed bottom-24 right-6 w-[90vw] md:w-96 max-w-full h-[500px] max-h-[70vh] bg-lions-card border border-slate-700 rounded-2xl shadow-[0_0_40px_rgba(0,0,0,0.5)] z-50 flex-col hidden overflow-hidden flex transform transition-transform duration-300 scale-95 opacity-0 pointer-events-none">
+    <div id="chat-widget" class="fixed bottom-6 right-6 w-96 max-w-[calc(100vw-3rem)] bg-lions-card border border-slate-700 rounded-2xl shadow-2xl z-50 flex flex-col hidden transform transition-transform scale-95 opacity-0 duration-300 origin-bottom-right">
         
-        <!-- Chat Header -->
-        <div class="bg-gradient-to-r from-lions-blue to-blue-900 p-4 border-b border-lions-gold flex justify-between items-center">
+        <!-- Header -->
+        <div class="bg-lions-blue p-4 rounded-t-2xl flex justify-between items-center border-b border-lions-gold shadow-md relative z-10">
             <div class="flex items-center gap-3">
-                <div class="w-10 h-10 rounded-full bg-lions-gold flex items-center justify-center border-2 border-white">
-                    <i class="fas fa-lion text-lions-blue text-xl"></i>
-                </div>
+                <i class="fas fa-robot text-2xl text-lions-gold"></i>
                 <div>
-                    <h4 class="font-bold text-white leading-tight">Lions Mentor AI</h4>
-                    <p class="text-xs text-blue-200">District 112A Expert</p>
+                    <h3 class="text-white font-bold text-sm leading-tight">Mentor AI</h3>
+                    <p class="text-[10px] text-blue-200 uppercase tracking-wider">District 112A Assistent</p>
                 </div>
             </div>
-            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors p-2">
-                <i class="fas fa-times text-xl"></i>
-            </button>
+            <button onclick="toggleChat()" class="text-slate-300 hover:text-white transition-colors p-2"><i class="fas fa-times text-xl"></i></button>
         </div>
-
-        <!-- Chat Messages Area -->
-        <div id="chatMessages" class="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-900 flex flex-col">
-            <!-- Initial Greeting -->
-            <div class="flex flex-col items-start">
-                <div class="bg-slate-800 border border-slate-700 text-slate-200 rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-sm shadow-sm chat-message-content">
-                    <p>Welkom bij de club! Vriendelijk dat je er bent. Ik ben jouw digitale peter/meter voor vandaag.</p>
-                    <p>Heb je vragen over de Lions organisatie, de commissies (zoals GAT), of wat er van jou verwacht wordt? Stel ze gerust!</p>
+        
+        <!-- Chat Area -->
+        <div id="chat-box" class="h-96 p-4 overflow-y-auto bg-slate-900 flex flex-col gap-4 relative">
+            <!-- Initial Message -->
+            <div class="flex gap-3">
+                <div class="w-8 h-8 rounded-full bg-lions-blue border border-lions-gold flex items-center justify-center flex-shrink-0 mt-1"><i class="fas fa-lion text-lions-gold text-xs"></i></div>
+                <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-sm border border-slate-700 text-sm text-slate-200 shadow-sm">
+                    Welkom! Ik ben je digitale peter/meter. Heb je vragen over de structuur, het GAT, lidmaatschappen of de werking van onze club? Stel ze gerust!
                 </div>
-                <span class="text-[10px] text-slate-500 mt-1 ml-1">Mentor AI</span>
+            </div>
+            
+            <!-- Typing Indicator (Hidden by default) -->
+            <div id="typing-indicator" class="flex gap-3 hidden">
+                <div class="w-8 h-8 rounded-full bg-lions-blue border border-lions-gold flex items-center justify-center flex-shrink-0 mt-1"><i class="fas fa-robot text-lions-gold text-xs"></i></div>
+                <div class="bg-slate-800 p-3 rounded-2xl rounded-tl-sm border border-slate-700 text-sm text-slate-200 shadow-sm flex items-center gap-1">
+                    <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                    <div class="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                </div>
             </div>
         </div>
-
-        <!-- Chat Input Area -->
-        <div class="p-3 bg-lions-card border-t border-slate-700">
-            <form id="chatForm" onsubmit="handleSend(event)" class="relative flex items-center">
-                <input type="text" id="chatInput" placeholder="Stel een vraag..." class="w-full bg-slate-800 text-white text-sm border border-slate-600 rounded-full py-3 pl-4 pr-12 focus:outline-none focus:border-lions-gold focus:ring-1 focus:ring-lions-gold transition-all" autocomplete="off">
-                <button type="submit" id="sendBtn" class="absolute right-2 w-8 h-8 flex items-center justify-center bg-lions-gold text-lions-blue rounded-full hover:bg-yellow-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
-                    <i class="fas fa-paper-plane text-sm"></i>
+        
+        <!-- Input Area -->
+        <div class="p-3 bg-lions-card rounded-b-2xl border-t border-slate-700 z-10 relative">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" class="flex-1 bg-slate-900 border border-slate-700 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-lions-gold focus:ring-1 focus:ring-lions-gold transition-all placeholder-slate-500" placeholder="Stel een vraag over de Lions..." onkeypress="handleKeyPress(event)">
+                <button id="send-btn" onclick="sendMessage()" class="bg-lions-gold text-lions-blue px-4 py-2 rounded-xl font-bold hover:bg-yellow-500 hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-900 focus:ring-lions-gold disabled:opacity-50 disabled:cursor-not-allowed">
+                    <i class="fas fa-paper-plane"></i>
                 </button>
-            </form>
+            </div>
+            <div class="text-[9px] text-center text-slate-500 mt-2 uppercase tracking-wide">AI gegenereerde antwoorden kunnen fouten bevatten.</div>
         </div>
     </div>
 
-    <!-- Application Logic -->
     <script>
-        // API Configuration
-        const apiKey = ""; // Canvas injects the key here
-        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`;
-        
-        // System Prompt defining the persona
-        const systemPrompt = `Je bent een ervaren, behulpzame en gerespecteerde peter/meter (mentor) binnen Lions Club District 112A (België). 
-Je doel is om nieuwe leden te helpen onze complexe organisatiestructuur (Club -> Zone -> Gewest -> District -> Multiple District 112 -> Europa -> Lions Clubs International) te begrijpen.
-Bespreek ook graag begrippen zoals 'We Serve', de Erecode, GAT (GST, GMT, GLT), en de visie om anderen 'the benefit of the doubt' te geven.
-Je antwoorden moeten warm, uitnodigend, informatief en geschreven zijn in vlot, modern Nederlands. 
-Houd je antwoorden relatief beknopt (max 2-3 alinea's), zodat ze goed leesbaar zijn in een kleine chat-interface. Gebruik Markdown voor nadruk waar nodig.`;
-
-        // Chat State
-        let chatHistory = [];
-        let isChatOpen = false;
+        // --- UI Logic ---
+        const chatWidget = document.getElementById('chat-widget');
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const typingIndicator = document.getElementById('typing-indicator');
+        const sendBtn = document.getElementById('send-btn');
         let isWaitingForResponse = false;
 
-        // DOM Elements
-        const chatWindow = document.getElementById('chatWindow');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
-        const sendBtn = document.getElementById('sendBtn');
-
-        // Toggle Chat Visibility
         function toggleChat() {
-            isChatOpen = !isChatOpen;
-            if (isChatOpen) {
-                chatWindow.classList.remove('opacity-0', 'scale-95', 'pointer-events-none');
-                chatWindow.classList.add('opacity-100', 'scale-100');
-                // Small delay to allow transition, then focus input
-                setTimeout(() => chatInput.focus(), 300);
+            if (chatWidget.classList.contains('hidden')) {
+                chatWidget.classList.remove('hidden');
+                // Small delay to allow display block to apply before animating opacity/transform
+                setTimeout(() => {
+                    chatWidget.classList.remove('scale-95', 'opacity-0');
+                    chatWidget.classList.add('scale-100', 'opacity-100');
+                    chatInput.focus();
+                }, 10);
             } else {
-                chatWindow.classList.add('opacity-0', 'scale-95', 'pointer-events-none');
-                chatWindow.classList.remove('opacity-100', 'scale-100');
+                chatWidget.classList.remove('scale-100', 'opacity-100');
+                chatWidget.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    chatWidget.classList.add('hidden');
+                }, 300); // Wait for transition to finish
             }
         }
 
-        // Basic Markdown parser for the chat output (bold, italic, simple lists)
-        function parseMarkdown(text) {
-            let html = text
-                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                .replace(/\n\n/g, '</p><p>')
-                .replace(/\n- (.*?)(?=\n|$)/g, '<ul><li>$1</li></ul>')
-                .replace(/<\/ul><ul>/g, ''); // Fix adjacent lists
-            
-            return `<p>${html}</p>`;
-        }
-
-        // Append message to UI
-        function appendMessage(role, text) {
-            const wrapper = document.createElement('div');
-            wrapper.className = `flex flex-col ${role === 'user' ? 'items-end' : 'items-start'} mb-4`;
-            
-            const bubble = document.createElement('div');
-            
-            if (role === 'user') {
-                bubble.className = 'bg-lions-blue border border-blue-600 text-white rounded-2xl rounded-tr-sm p-3 max-w-[85%] text-sm shadow-sm';
-                bubble.innerText = text;
-            } else {
-                bubble.className = 'bg-slate-800 border border-slate-700 text-slate-200 rounded-2xl rounded-tl-sm p-3 max-w-[85%] text-sm shadow-sm chat-message-content';
-                bubble.innerHTML = parseMarkdown(text);
+        function handleKeyPress(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
             }
-            
-            const label = document.createElement('span');
-            label.className = `text-[10px] text-slate-500 mt-1 ${role === 'user' ? 'mr-1' : 'ml-1'}`;
-            label.innerText = role === 'user' ? 'Jij' : 'Mentor AI';
-
-            wrapper.appendChild(bubble);
-            wrapper.appendChild(label);
-            chatMessages.appendChild(wrapper);
-            
-            // Scroll to bottom
-            chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Add Loading Indicator
-        function showTypingIndicator() {
-            const wrapper = document.createElement('div');
-            wrapper.id = 'typingIndicator';
-            wrapper.className = 'flex flex-col items-start mb-4';
+        // --- Chat & API Logic ---
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=`; // API Key is provided by Canvas runtime
+        
+        let chatHistory = [];
+        const systemPrompt = `Je bent een ervaren en gerespecteerd lid van de Lions Club uit District 112A in België (een 'peter' of 'meter').
+Je taak is om nieuwe leden hartelijk te begeleiden en hun vragen te beantwoorden over de structuur, werking, en regels van de Lions Club.
+Gebruik altijd een warme, behulpzame en vriendschappelijke toon. Verwerk de kernwaarden van de Lions ("We Serve", "Benefit of the doubt", vriendschap, onbaatzuchtigheid) in je antwoorden.
+Je kennis is gebaseerd op de Lions Club welkomstbrochure (inclusief GAT, GST, GMT, GLT, lidmaatschappen, districten, en Oak Brook).
+Wees beknopt maar duidelijk. Gebruik indien nodig korte lijstjes. Gebruik Markdown voor opmaak (**vet**, *cursief*).`;
+
+        function appendMessage(sender, text) {
+            const msgDiv = document.createElement('div');
+            msgDiv.className = 'flex gap-3 mb-2 animate-[fadeIn_0.3s_ease-out]';
             
-            wrapper.innerHTML = `
-                <div class="bg-slate-800 border border-slate-700 rounded-2xl rounded-tl-sm p-4 flex gap-1 items-center shadow-sm">
-                    <div class="w-1.5 h-1.5 bg-lions-gold rounded-full animate-bounce"></div>
-                    <div class="w-1.5 h-1.5 bg-lions-gold rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
-                    <div class="w-1.5 h-1.5 bg-lions-gold rounded-full animate-bounce" style="animation-delay: 0.4s"></div>
-                </div>
+            let iconHtml = '';
+            let bubbleClass = '';
+            
+            if (sender === 'user') {
+                msgDiv.classList.add('flex-row-reverse');
+                iconHtml = `<div class="w-8 h-8 rounded-full bg-slate-700 flex items-center justify-center flex-shrink-0 mt-1"><i class="fas fa-user text-slate-300 text-xs"></i></div>`;
+                bubbleClass = 'bg-lions-blue p-3 rounded-2xl rounded-tr-sm text-sm text-white shadow-sm';
+            } else {
+                iconHtml = `<div class="w-8 h-8 rounded-full bg-lions-blue border border-lions-gold flex items-center justify-center flex-shrink-0 mt-1"><i class="fas fa-lion text-lions-gold text-xs"></i></div>`;
+                bubbleClass = 'bg-slate-800 p-3 rounded-2xl rounded-tl-sm border border-slate-700 text-sm text-slate-200 shadow-sm chat-message-content';
+                
+                // Simple Markdown parser for bold and bullet points
+                text = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+                text = text.replace(/\*(.*?)\*/g, '<em>$1</em>');
+                text = text.replace(/\n\* /g, '<br>• ');
+                text = text.replace(/\n- /g, '<br>• ');
+                text = text.replace(/\n/g, '<br>');
+            }
+
+            msgDiv.innerHTML = `
+                ${iconHtml}
+                <div class="${bubbleClass}">${text}</div>
             `;
-            chatMessages.appendChild(wrapper);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            
+            chatBox.insertBefore(msgDiv, typingIndicator);
+            scrollToBottom();
+        }
+
+        function showTypingIndicator() {
+            typingIndicator.classList.remove('hidden');
+            scrollToBottom();
         }
 
         function hideTypingIndicator() {
-            const indicator = document.getElementById('typingIndicator');
-            if (indicator) {
-                indicator.remove();
-            }
+            typingIndicator.classList.add('hidden');
         }
 
-        // Handle form submission
-        async function handleSend(event) {
-            event.preventDefault();
-            
+        function scrollToBottom() {
+            chatBox.scrollTop = chatBox.scrollHeight;
+        }
+
+        async function sendMessage() {
             const message = chatInput.value.trim();
             if (!message || isWaitingForResponse) return;
 
-            // Update UI & State
+            // Update UI
             chatInput.value = '';
             appendMessage('user', message);
             isWaitingForResponse = true;
             sendBtn.disabled = true;
-            
-            // Add to history
-            chatHistory.push({ role: "user", parts: [{ text: message }] });
-            
             showTypingIndicator();
 
+            // Prepare API payload
+            chatHistory.push({ role: "user", parts: [{ text: message }] });
+            
             const payload = {
                 contents: chatHistory,
                 systemInstruction: {
@@ -668,7 +825,6 @@ Houd je antwoorden relatief beknopt (max 2-3 alinea's), zodat ze goed leesbaar z
             await callGeminiWithRetry(payload, 3);
         }
 
-        // Fetch with Retry Logic
         async function callGeminiWithRetry(payload, maxRetries, currentRetry = 0) {
             try {
                 const response = await fetch(apiUrl, {
@@ -695,23 +851,16 @@ Houd je antwoorden relatief beknopt (max 2-3 alinea's), zodat ze goed leesbaar z
                 appendMessage('model', 'Oeps, het lijkt erop dat ik even de draad kwijt ben. Probeer het over een momentje nog eens.');
                 isWaitingForResponse = false;
                 sendBtn.disabled = false;
-                
-                // Remove the last user message from history so they can retry
-                chatHistory.pop();
+                chatHistory.pop(); // Remove failed user message from history
             }
         }
 
-        // Process final response
         function handleAPIResponse(result) {
             hideTypingIndicator();
             
             if (result.candidates && result.candidates.length > 0 && result.candidates[0].content) {
                 const aiResponseText = result.candidates[0].content.parts[0].text;
-                
-                // Update UI
                 appendMessage('model', aiResponseText);
-                
-                // Add to history
                 chatHistory.push({ role: "model", parts: [{ text: aiResponseText }] });
             } else {
                 appendMessage('model', 'Sorry, ik kon dat niet goed verwerken. Kan je de vraag anders stellen?');
